@@ -11,5 +11,7 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    <import resource="config/beans-config.xml" />
 
 </beans>
