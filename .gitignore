@@ -1,0 +1,8 @@
+# ignore .idea directory
+.idea/
+
+# ignore idea iml file. Project can be created with pom.xml
+news-analitics.iml
+
+# ignore target directory
+target/
