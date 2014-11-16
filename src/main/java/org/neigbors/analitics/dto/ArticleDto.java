@@ -1,11 +1,12 @@
 package org.neigbors.analitics.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Class that represent an Article
  */
-public class ArticleDto {
+public class ArticleDto implements Serializable {
 
     private String title;
     private String topic;

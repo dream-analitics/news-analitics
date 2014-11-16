@@ -6,4 +6,5 @@
        <alias name="defaultArticleService" alias="articleService" />
        <bean id="defaultArticleService" class="org.neigbors.analitics.service.impl.DefaultArticleService" />
 
+       <bean id="feedzillaNewsFetcher" class="org.neigbors.analitics.fetcher.news.feedzilla.FeedzillaNewsFetcher" />
 </beans>
