@@ -1,16 +1,34 @@
 package org.neigbors.analitics.service.impl;
 
 import org.neigbors.analitics.dto.ArticleDto;
+import org.neigbors.analitics.dto.ArticleSetDto;
+import org.neigbors.analitics.dto.CategoryDto;
+import org.neigbors.analitics.fetcher.news.feedzilla.FeedzillaNewsFetcher;
 import org.neigbors.analitics.service.ArticleService;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class DefaultArticleService implements ArticleService {
+
+    @Resource
+    private FeedzillaNewsFetcher feedzillaNewsFetcher;
+
     @Override
     public List<ArticleDto> fetchLatestNews() {
         return getDummyNews();
+    }
+
+    @Override
+    public List<CategoryDto> fetchAllRootCategories() {
+        return feedzillaNewsFetcher.getAllCategories(FeedzillaNewsFetcher.Order.POPULAR);
+    }
+
+    @Override
+    public ArticleSetDto getArticlesByCategoryId(Integer categoryId, Integer count) {
+        return feedzillaNewsFetcher.getArticlesForCategoryId(categoryId, count);
     }
 
     private List<ArticleDto> getDummyNews() {
